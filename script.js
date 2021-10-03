@@ -1,15 +1,32 @@
 const btnStart = document.querySelector(".btn-start")
 const questionContainer = document.querySelector("#questions-container")
 const singleQuestion = document.querySelector("#single-question")
+const answerContainer = document.querySelector("#answers-container .flex")
 
 btnStart.addEventListener("click", () => {
   btnStart.classList.add("hide")
   questionContainer.classList.remove("hide")
 
-  allQuestions.forEach((question) => {
-    singleQuestion.innerHTML = question.question
+  const currentQuestion = randomQuestion(allQuestions)
+
+  // printing Title
+  singleQuestion.innerHTML = currentQuestion.question
+
+  const answers = currentQuestion.answer
+
+  answers.forEach((answer) => {
+    const newAnswer = document.createElement("button")
+    newAnswer.classList.add("btn")
+    newAnswer.innerHTML = answer.text
+    // console.log(newAnswer)
+    answerContainer.appendChild(newAnswer)
   })
 })
+
+function randomQuestion(items) {
+  const randomItem = items[Math.floor(Math.random() * items.length)]
+  return randomItem
+}
 
 // all the questions wrapped inside an array
 const allQuestions = [
