@@ -4,13 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Font Noto Sans Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- My script -->
+    <script src="script.js" defer></script>
     <title>Quiz App</title>
 </head>
 <body>
     <!-- container -->
     <div class="container-app">
-        
+        <div id="questions-container" class="hide">
+            <div id="single-question" class="question-title">
+
+            </div>
+
+            <div class="answers-container">
+                <div class="flex">
+                    <button class="btn">Answer 1</button>
+                    <button class="btn">Answer 2</button>
+                </div>
+                <div class="flex">
+                    <button class="btn">Answer 3</button>
+                    <button class="btn">Answer 4</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="controls">
+            <button class="btn-start btn">start</button>
+            <button class="btn-next hide">next</button>
+        </div>
     </div>
 </body>
 </html>
